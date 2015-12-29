@@ -1,0 +1,17 @@
+{
+  "name": "json2mongo",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pdeso6/json2mongo.git"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "kerberos": "0.0.17",
+    "mongodb": "^2.1.2",
+    "mongoose": "^4.3.4"
+  }
+}
