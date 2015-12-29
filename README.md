@@ -14,3 +14,7 @@ Upon `npm install mongodb`, followed warning of missing package
 
 globally.
 
+
+
+[Mongoose Quickstart](http://mongoosejs.com/docs/index.html)
+
