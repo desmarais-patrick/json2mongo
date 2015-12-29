@@ -1,5 +1,6 @@
 # json2mongo
-Incomplete command-line importer, JSON file to Mongo DB collection
+
+Incomplete command-line data importer, from JSON file to Mongo database collection.
 
 ## Notes
 

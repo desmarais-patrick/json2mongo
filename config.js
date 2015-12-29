@@ -1,4 +1,6 @@
 module.exports = {
-  url: "http://localhost:3001/"
+  host: "localhost",
+  port: 3001,
+  dbname: "meteor"
 };
 
