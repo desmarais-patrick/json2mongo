@@ -1,0 +1,47 @@
+Transactions
+date: Date
+scheduledDate: Date
+method: PaymentMethods.ID
+to: TertiariesOrAccounts.ID
+from: TertiariesOrAccounts.ID
+amount: number
+isTaxableIncome: boolean
+comment: string
+confirmation: string
+
+PaymentMethods
+name: string
+
+Categories
+name: string
+parent: Categories.ID
+
+TertiariesOrAccounts
+ternary: Tertiaries.ID
+account: Accounts.ID
+
+Accounts
+name: string
+institution: Tertiaries.ID
+
+Tertiaries
+name: string
+categories: [Categories.ID]
+location: Locations.ID
+customerId: string
+
+Categories
+name: string
+parent: Categories.ID
+
+Locations
+name: string
+address: Addresses.ID
+
+Addresses
+address: string
+city: string
+postal: string
+latitude: number
+longitude: number
+
