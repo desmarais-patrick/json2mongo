@@ -1,13 +1,45 @@
 Transactions
 date: Date
-scheduledDate: Date
-method: PaymentMethods.ID
-to: TertiariesOrAccounts.ID
-from: TertiariesOrAccounts.ID
 amount: number
-isTaxableIncome: boolean
+currency: Currency.ID
+method: PaymentMethods.ID
+category: Categories.ID
 comment: string
+
+Incomes extends Transactions
+taxable: boolean
+in: Accounts.ID
+
+Expenses extends Transactions
+to: Entities.ID
+location: Locations.ID
+
+ContractualExpenses extends Transactions
+contract: Contracts.ID
+received: Date
+due: Date
+scheduled: Date
 confirmation: string
+
+InternalTransfers
+from: Accounts.ID
+to: Accounts.ID
+
+ExternalTransfers
+from: Accounts.ID
+to: Entities.ID
+
+TransactionTypes
+name: string
+
+TransactionRecurrences
+description: string
+cron: string
+amount: string
+currency: string
+
+Currencies
+name: string
 
 PaymentMethods
 name: string
@@ -16,32 +48,35 @@ Categories
 name: string
 parent: Categories.ID
 
-TertiariesOrAccounts
-ternary: Tertiaries.ID
-account: Accounts.ID
-
 Accounts
 name: string
-institution: Tertiaries.ID
+institution: Entities.ID
 
-Tertiaries
+Entities
 name: string
+type: EntityTypes.ID
+
+EntityTypes
+name: string
+
+Individuals extends Entities
+relationship: string
+
+Businesses extends Entities
 categories: [Categories.ID]
 location: Locations.ID
-customerId: string
+identification?: string
 
 Categories
 name: string
-parent: Categories.ID
+parent?: Categories.ID
 
 Locations
 name: string
-address: Addresses.ID
+description?: string
 
-Addresses
-address: string
-city: string
-postal: string
-latitude: number
-longitude: number
+Contracts
+start: Date
+with: Entities.ID
+end?: Date
 
